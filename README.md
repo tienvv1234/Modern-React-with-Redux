@@ -28,3 +28,27 @@ package.json ---> Records our project dependencies and configures our project
 package-lock-json ---> Records the exact version of packages that we install
 
 acomponent is a function or class that produces HTML to show the user (using JSX) and handles feedback from the user (Using Event Handlers)
+
+JSX vs HTML
+- Adding custom styling to an element uses different syntax
+- adding a class to an element uses different systax
+- JSX can reference JS variables
+
+- component nesting: a component can be shown inside of another
+- component resuability: we want to make components that can be easyly reused through out application
+- component Configuration: we should be able to configure a component when it is created
+
+semantic-ui.com : open source css
+
+prop system: system for passing data from a paren component to a child component, goal is to customize or configure a child component
+
+function components: good for simple content
+class components: good for just about everything else
+
+life cycle:
+1. JS file loaded by browser
+2. App component gets created
+3. We call geolocation service
+4. App returns JSX, get rendered to paga as HTML
+5...
+last. We get result of geolocation
