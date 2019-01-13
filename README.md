@@ -70,3 +70,13 @@ last. We get result of geolocation
 + Updating 'state' on a component causes the component to (almost) instantly rerender
 + State must be initialized when a component is created
 + State can only be updated using the function 'setState'
+
+- Life Cycle
++ Contructor
++ Render method
++ Content visible on screen
++ ComponentDidMount
++ Sit and wait for updates
++ ComponentDidUpdate
++ Sit and wait until this component is not longer shown
++ ComponentWillUnmount
