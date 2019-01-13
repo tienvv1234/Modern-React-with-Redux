@@ -52,3 +52,21 @@ life cycle:
 4. App returns JSX, get rendered to paga as HTML
 5...
 last. We get result of geolocation
+
+-- something keep in mind and this is something is not going to repeat to you many times throighout the remainder of the course is that getting this geolocation result back takes some amount of time
+- big issue when using a functional component with this geolocation api, the whole big problem with this is that it takes some amount of time for the geolocation service to return our position, by the time it finally returns our position we have already rendered our app component onto the screen and with a functional component we don't have any good way or rendering it automatically or somehow telling the app component to like pause it's rendering process
+***************************************************
+- HOW TO SOLVE THIS
++ Use re-access state system (Class component) (we use state and set state will almost instantly rerender the component )
+- Rules of class components
++ Must be a javascript
++ Must extend (subclass) React.Component
++ Must define a 'render' method that returns some amount of JSX
+
+- State in React (`Rule of State`)
++ Only usable with class components (NOTE: Technically we can used state with functional components using the host system)
++ You will confuse props with state.
++ State is a JS object that contains data relevant to a component.
++ Updating 'state' on a component causes the component to (almost) instantly rerender
++ State must be initialized when a component is created
++ State can only be updated using the function 'setState'
