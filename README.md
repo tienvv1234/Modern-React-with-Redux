@@ -80,3 +80,10 @@ last. We get result of geolocation
 + ComponentDidUpdate
 + Sit and wait until this component is not longer shown
 + ComponentWillUnmount
+
+- Controll and UnControll
++ User types in input
++ Callback gets invoked
++ we call setState with the new value
++ Component rerenders
++ input is told what it is value is (coming from state)
