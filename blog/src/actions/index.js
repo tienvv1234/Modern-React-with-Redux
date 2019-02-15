@@ -16,16 +16,13 @@ import jsonPlaceholder from '../apis/jsonPlaceholder';
 //   //   payload: response
 //   // };
 //   return async (dispatch, getState) => {
-//     console.log('dispatch', dispatch);
-//     console.log('getState', getState);
 //     const response = await jsonPlaceholder.get('/posts');
-//     console.log('response', response);
 //     dispatch({ type: 'FETCH_POSTS', payload: response });
 //   };
 // };
 
 export const fetchPosts = () => async dispatch => {
   const response = await jsonPlaceholder.get('/posts');
-
-  dispatch({ type: 'FETCH_POSTS', payload: response });
+  console.log('response', response);
+  dispatch({ type: 'FETCH_POSTS', payload: response.data });
 };

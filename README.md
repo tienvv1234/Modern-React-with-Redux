@@ -136,4 +136,35 @@ Normal Rules:
 - Action Creators must return action object (must be a plain javascript object) that has a type property and optionally can also have a payload as well
 
 - `redux-thunk allows you tu rutn either in action object or a function`
-- 
+
+rules of reducers
+
+- Must return any value besides 'undefined'
+- Produces 'state', or data to be used inside of your app using only previous state and the action(reducers are pure)
+- must not return reach 'out of itself' to decede what value to return
+
+- must not mutate it's input 'state' argument
+
+- Removing an element from an array
+
+* bad `state.pop()` good `state.filter(e => e !=='hi')`
+
+- Adding an element to an array
+
+* bad `state.push('hi')` good `[...state, 'hi']`
+
+- Replacing an element in an array
+
+* bad `state[0] = 'hi'` good `state.map(e => e === 'hi' ? 'bye', el)`
+
+- Updating a property in an object
+
+* bad `state.name = 'Sam'` good `{...state, name: 'Sam'}`
+
+- Adding a property to an object
+
+* bad `state.age = 30` good `{...state, age:30 }`
+
+- Removing a property from an object
+
+* bad delete state.name good `{...state, age: undefined }` or use lodash `_.omit(state, 'age')`
