@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPosts } from '../actions';
+import { fetchPostAndUsers } from '../actions';
+import UserHeader from './UserHeader';
 class PostList extends React.Component {
   componentDidMount() {
     //when this function call, the connect function will make this function
     // go into store.dispatch() probably happening in react-redux
-    this.props.fetchPosts();
+    this.props.fetchPostAndUsers();
   }
 
   renderList() {
@@ -18,6 +19,7 @@ class PostList extends React.Component {
               <h2>{post.title}</h2>
               <p>{post.body}</p>
             </div>
+            <UserHeader userId={post.userId} />
           </div>
         </div>
       );
@@ -30,11 +32,10 @@ class PostList extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log('state1', state);
   return { posts: state.posts };
 };
 
 export default connect(
   mapStateToProps,
-  { fetchPosts }
+  { fetchPostAndUsers }
 )(PostList);

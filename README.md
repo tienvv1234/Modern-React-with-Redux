@@ -168,3 +168,12 @@ rules of reducers
 - Removing a property from an object
 
 * bad delete state.name good `{...state, age: undefined }` or use lodash `_.omit(state, 'age')`
+
+memoize from lodash, we using function for handle many duplicate request user
+
+const abc = \_.memoize(pass function like argument) ==> so abc is function have same logic with the function be passed into memoize, but lodash will additional code inside the function.
+
+the only difference is that we can only call memoize abc 1 time twith any unique set of arguments (ex: abc(1) ,abc(2))
+so in other word the function abc will call only one time, and second time the function itseft is not going to run instead we are just going to return whatever was returned the previous time
+
+- we only want to build a call our action creator with a unique Id one time
