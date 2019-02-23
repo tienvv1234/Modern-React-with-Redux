@@ -177,3 +177,14 @@ the only difference is that we can only call memoize abc 1 time twith any unique
 so in other word the function abc will call only one time, and second time the function itseft is not going to run instead we are just going to return whatever was returned the previous time
 
 - we only want to build a call our action creator with a unique Id one time
+
+React-route-dom
+exact: a single path can be matched by different routes inside of application notes
+should not use <a> tag in react this is bad --> Link tag
+
+3 difference type of route
+one is browserRouter: uses everything after the TLD(.com, .net) or port as the path
+
+one is HashRouter: Uses everything after a # as the path
+
+one is MemoryRouter: doesn't use the URL to track navigation
